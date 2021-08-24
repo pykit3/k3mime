@@ -1,9 +1,9 @@
 """
-{{ name }} is utility to .
+k3mime is utility to .
 
 Execute a shell script::
 
-    import {{ name }}
+    import k3mime
 
     # execute a shell script
 
@@ -22,11 +22,15 @@ Run a command::
 
 """
 
-# from .proc import CalledProcessError
-# from .proc import ProcError
 
 __version__ = "0.1.0"
-__name__ = "{{ name }}"
+__name__ = "k3mime"
 
-from .{{ name }} import foo
-from .{{ name }} import SomeError
+from .mime import (
+    get_by_filename
+)
+
+__all__ = [
+    'get_by_filename'
+]
+
