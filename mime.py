@@ -18,6 +18,13 @@ mimes = _init()
 
 
 def get_by_filename(filename):
+    """
+    Return mime type according to filename suffix.
+
+    :param filename: is a string.
+    :return: mime type that predefined.
+    """
+
     mime_type = None
 
     if filename.find('.') != -1:

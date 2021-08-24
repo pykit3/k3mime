@@ -8,34 +8,14 @@ k3mime
 
 .. automodule:: k3mime
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-.. contents::
-   :depth: 4
-   :local:
 
 Documentation for the Code
 **************************
 
-Exceptions
-----------
-
-.. autoexception::  SomeError
-
-
-Classes
-----------
-
-.. autoclass::  Bar
-    :members:
-
-
 Functions
 ---------
 
-.. autofunction::  foo
+.. autofunction::  get_by_filename
 
 Indices and tables
 ==================

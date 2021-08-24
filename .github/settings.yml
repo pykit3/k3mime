@@ -1,6 +1,6 @@
 _extends: gh-config
 
 repository:
-  description: no desc
+  description: This module provide some util methods to handle mime type.
   homepage: https://blog.openacid.com
-  topics: tag1, tag2
+  topics: python, mime

@@ -1,0 +1,4 @@
+[ remote: https://github.com/ ]
+[ base: ]
+
+thirdpart/mimes.json    bsc-s2/resource             master    mimes.json

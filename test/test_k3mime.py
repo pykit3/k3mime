@@ -1,9 +1,9 @@
 import unittest
 
-from pykit import mime
-from pykit import ututil
+import k3mime
+import k3ut
 
-dd = ututil.dd
+dd = k3ut.dd
 
 
 class TestMime(unittest.TestCase):
@@ -20,7 +20,7 @@ class TestMime(unittest.TestCase):
 
         for inp, expected in cases:
             dd('inp, expected:', inp, ' ', expected)
-            rst = mime.get_by_filename(inp)
+            rst = k3mime.get_by_filename(inp)
 
             dd('rst:', rst)
 

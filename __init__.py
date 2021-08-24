@@ -1,24 +1,11 @@
 """
-k3mime is utility to .
+#   Name
 
-Execute a shell script::
+k3mime
 
-    import k3mime
+#   Status
 
-    # execute a shell script
-
-    returncode, out, err = pk3proc.shell_script('ls / | grep bin')
-    print returncode
-    print out
-    # output:
-    # > 0
-    # > bin
-    # > sbin
-
-Run a command::
-
-    # Unlike the above snippet, following statement does not start an sh process.
-    returncode, out, err = pk3proc.command('ls', 'a*', cwd='/usr/local')
+The library is considered production ready.
 
 """
 
