@@ -1,0 +1,6 @@
+_extends: gh-config
+
+repository:
+  description: no desc
+  homepage: https://blog.openacid.com
+  topics: tag1, tag2
