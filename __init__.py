@@ -1,4 +1,12 @@
 """
+#   Table of Content
+
+- [Name](#name)
+- [Status](#status)
+- [Synopsis](#synopsis)
+- [Author](#author)
+- [Copyright and License](#copyright-and-license)
+
 #   Name
 
 k3mime
@@ -10,7 +18,7 @@ The library is considered production ready.
 """
 
 
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 __name__ = "k3mime"
 
 from .mime import (

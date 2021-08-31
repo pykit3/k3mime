@@ -10,6 +10,14 @@ This module provide some util methods to handle mime type.
 k3mime is a component of [pykit3] project: a python3 toolkit set.
 
 
+#   Table of Content
+
+- [Name](#name)
+- [Status](#status)
+- [Synopsis](#synopsis)
+- [Author](#author)
+- [Copyright and License](#copyright-and-license)
+
 #   Name
 
 k3mime
