@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 k3mime
-============
+======
 
 .. automodule:: k3mime
 
