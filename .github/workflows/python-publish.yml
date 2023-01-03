@@ -29,7 +29,6 @@ jobs:
         TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
       run: |
         cp setup.py ..
-        cp MANIFEST.in ..
         cd ..
         python setup.py sdist bdist_wheel
         pip install dist/*.tar.gz
