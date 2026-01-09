@@ -35,6 +35,7 @@ dev = [
     "pytest>=7.0",
     "ruff",
     "coverage",
+    "k3ut",
 ]
 publish = [
     "build",
@@ -52,6 +53,9 @@ packages = ["k3mime"]
 
 [tool.setuptools.package-dir]
 k3mime = "."
+
+[tool.setuptools.package-data]
+k3mime = ["thirdpart/*.json"]
 
 [tool.ruff]
 line-length = 120
