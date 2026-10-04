@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# coding: utf-8
 
 """
 Populate tmpl to a real repo
@@ -7,6 +6,7 @@ Populate tmpl to a real repo
 
 import os
 import re
+
 import jinja2
 
 

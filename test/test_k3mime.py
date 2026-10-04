@@ -1,7 +1,8 @@
 import unittest
 
-import k3mime
 import k3ut
+
+import k3mime
 
 dd = k3ut.dd
 

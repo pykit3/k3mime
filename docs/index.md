@@ -21,12 +21,12 @@ from k3mime import get_by_filename
 
 # Get MIME type by filename
 print(get_by_filename("document.pdf"))  # application/pdf
-print(get_by_filename("image.png"))     # image/png
-print(get_by_filename("video.mp4"))     # video/mp4
-print(get_by_filename("data.json"))     # application/json
+print(get_by_filename("image.png"))  # image/png
+print(get_by_filename("video.mp4"))  # video/mp4
+print(get_by_filename("data.json"))  # application/json
 
 # Unknown extensions return application/octet-stream
-print(get_by_filename("unknown.xyz"))   # application/octet-stream
+print(get_by_filename("unknown.xyz"))  # application/octet-stream
 ```
 
 ## API Reference

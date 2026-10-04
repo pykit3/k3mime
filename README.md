@@ -9,24 +9,6 @@ This module provide some util methods to handle mime type.
 k3mime is a component of [pykit3] project: a python3 toolkit set.
 
 
-#   Table of Content
-
-- [Name](#name)
-- [Status](#status)
-- [Synopsis](#synopsis)
-- [Author](#author)
-- [Copyright and License](#copyright-and-license)
-
-
-#   Name
-
-k3mime
-
-#   Status
-
-The library is considered production ready.
-
-
 
 
 # Install
@@ -38,13 +20,10 @@ pip install k3mime
 # Synopsis
 
 ```python
-
 import k3mime
 
-print(k3mime.get_by_filename('file.json'))
+print(k3mime.get_by_filename("file.json"))
 #  application/json
-
-
 ```
 
 #   Author
