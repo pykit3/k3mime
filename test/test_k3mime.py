@@ -38,6 +38,15 @@ class TestMime(unittest.TestCase):
         rst = {suffix: k3mime.get_by_filename("file." + suffix) for suffix in want}
         self.assertEqual(want, rst)
 
+    def test_get_by_filename_ignores_suffix_case(self):
+        # mimes.json has only lower-case suffixes.
+        path = os.path.join(os.path.dirname(k3mime.__file__), "thirdpart", "mimes.json")
+        with open(path) as f:
+            want = json.load(f)
+
+        rst = {suffix: k3mime.get_by_filename("file." + suffix.upper()) for suffix in want}
+        self.assertEqual(want, rst)
+
     def test_get_by_filename_fallback(self):
         # mimes.json has no "py" entry, so the mimetypes module decides.
         want, _ = mimetypes.guess_type("file.py")

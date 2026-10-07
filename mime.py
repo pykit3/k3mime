@@ -29,7 +29,7 @@ def get_by_filename(filename):
 
     if filename.find(".") != -1:
         suffix = filename.rsplit(".", 1)[-1]
-        mime_type = mimes.get(suffix)
+        mime_type = mimes.get(suffix.lower())
         if mime_type is None:
             mime_type, _ = mimetypes.guess_type(filename)
 
