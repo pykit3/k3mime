@@ -59,6 +59,18 @@ class TestMime(unittest.TestCase):
             # A dot in a directory name is not a suffix.
             ("dir.json/file", "application/octet-stream"),
             ("dir/file.json", "application/json"),
+            ("dir.d/file.json", "application/json"),
+            ("dir.v1/sub.v2/notes.txt", "text/plain"),
+            ("dir.d/README", "application/octet-stream"),
+            # A file without a suffix.
+            ("README", "application/octet-stream"),
+            ("dir/README", "application/octet-stream"),
+            # A hidden file.
+            (".bashrc", "application/octet-stream"),
+            ("dir/.hidden.json", "application/json"),
+            # Only the last of several suffixes counts.
+            ("photo.jpeg.png", "image/png"),
+            ("a.b.c.txt", "text/plain"),
         )
 
         for inp, expected in cases:
