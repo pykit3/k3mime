@@ -1,7 +1,12 @@
 import json
 import mimetypes
 import os
+import shutil
+import subprocess
+import sys
+import tempfile
 import unittest
+import venv
 
 import k3ut
 
@@ -76,3 +81,27 @@ class TestMime(unittest.TestCase):
         for inp, expected in cases:
             rst = k3mime.get_by_filename(inp)
             self.assertEqual(expected, rst)
+
+    def test_get_by_filename_from_wheel(self):
+        # The other tests import k3mime from the checkout. This one installs a wheel into a new venv and imports
+        # k3mime there, so it fails when the wheel leaves out thirdpart/mimes.json.
+        src = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        with tempfile.TemporaryDirectory() as tmp:
+            # pip builds in the source tree, and a stale file in its build/ would get into the wheel.
+            copy = os.path.join(tmp, "src")
+            shutil.copytree(src, copy, ignore=shutil.ignore_patterns(".git", "build", "*.egg-info"))
+
+            dist = os.path.join(tmp, "dist")
+            subprocess.run([sys.executable, "-m", "pip", "wheel", "-q", "--no-deps", "-w", dist, copy], check=True)
+            [name] = os.listdir(dist)
+            wheel = os.path.join(dist, name)
+
+            env = os.path.join(tmp, "env")
+            venv.create(env)
+            python = os.path.join(env, "bin", "python")
+            subprocess.run([sys.executable, "-m", "pip", "--python", python, "install", "-q", wheel], check=True)
+
+            code = "import k3mime; print(k3mime.get_by_filename('file.123'))"
+            rst = subprocess.run([python, "-I", "-c", code], cwd=tmp, stdout=subprocess.PIPE, text=True, check=True)
+
+        self.assertEqual("application/vnd.lotus-1-2-3\n", rst.stdout)
