@@ -9,7 +9,7 @@ resource = os.path.join(dir_name, "thirdpart", "mimes.json")
 
 
 def _init():
-    with open(resource, "r") as f:
+    with open(resource, "r", encoding="utf-8") as f:
         content = f.read()
     return json.loads(content)
 
