@@ -24,6 +24,10 @@ class TestMime(unittest.TestCase):
             ("file.123.not_exist_suffix_aa", "application/octet-stream"),
             ("file.json", "application/json"),
             ("file.not_exist_suffix_aa", "application/octet-stream"),
+            # The bytes are gzip, whatever the archive inside holds.
+            ("file.gz", "application/gzip"),
+            ("archive.tar.gz", "application/gzip"),
+            ("archive.tgz", "application/gzip"),
         )
 
         for inp, expected in cases:
